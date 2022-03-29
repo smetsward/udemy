@@ -6,15 +6,15 @@
 ####################################
 
 # What to backup. 
-backup_files="/home /var/spool/mail /etc /root /boot /opt"
+backup_files="/home /var/www/*"
 
 # Where to backup to.
-dest="/home/"
+dest="/tmp/backup/"
 
 # Create archive filename.
 day=$(date +%A)
 hostname=$(hostname -s)
-archive_file="$hostname-$day.tgz"
+archive_file="BackUp-$(date +%d-%m-%Y_%H-%M-%S).tgz"
 
 # Print start status message.
 echo "Backing up $backup_files to $dest/$archive_file"
