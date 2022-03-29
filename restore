@@ -6,10 +6,10 @@
 ####################################
 
 # What to backup. 
-restore_files="/tmp/backup/*"
+# restore_files="/tmp/backup/*"
 
 # Where to backup to.
-dest="/tmp/restore/"
+# dest="/tmp/restore/"
 
 # Create archive filename.
 # day=$(date +%A)
@@ -29,7 +29,8 @@ echo
 echo "Sending Backup to server"
 date
 
-scp /tmp/backup/* ws@192.168.200.151:/tmp/backup
+#scp /tmp/backup/* ws@192.168.200.151:/tmp/backup
+scp ws@192.168.200.150:/tmp/backup/* /tmp/restore
 
 
 # Print sending status message.
