@@ -26,6 +26,13 @@ tar czf $dest/$archive_file $backup_files
 
 # Print end status message.
 echo
+echo "Sending Backup to Backup server"
+date
+
+scp /tmp/backup/* ws@192.168.200.151:/tmp/backup
+
+# Print sending status message.
+echo
 echo "Backup finished"
 date
 
