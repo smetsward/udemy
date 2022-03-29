@@ -30,15 +30,15 @@ echo "Sending Backup to server"
 date
 
 #scp /tmp/backup/* ws@192.168.200.151:/tmp/backup
-scp ws@192.168.200.150:/tmp/backup/* /tmp/restore
+scp ws@192.168.200.151:/tmp/backup/* /tmp/restore
 
 
 # Print sending status message.
 echo
 echo "Backup restore"
+cd /tmp/restore/
 sudo tar -zxvf /tmp/restore/backup-*
-sudo cp -rfviS /tmp/restore/var/www/* /var/www/
-sudo rm -r 
+sudo cp -rf /tmp/restore/var/www/* /var/www/
 
 # Print sending status message.
 echo
@@ -48,8 +48,8 @@ date
 # Print sending status message.
 echo
 echo "Clean Up"
-sudo rm -r backup-*
-sudo rm -r var/
+sudo rm -r /tmp/restore/backup-*
+sudo rm -r /tmp/restore/var/
 
 # Long listing of files in $dest to check file sizes.
 ls -lh $dest
